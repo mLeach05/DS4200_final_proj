@@ -1,0 +1,53 @@
+/*
+Styleguide for webpage for data viz project
+Author: Milo Leach
+Last Updated: 11/15/2025
+*/
+
+body {
+    font-family: 'Times New Roman', Times, serif;
+    margin: 20px;
+    background-color: white;
+    color: black;
+}
+
+#title {
+    text-align: center;
+    font-size: 36px;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+#authors {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 10px;
+    font-style: italic;
+}
+nav#sections ul {
+    list-style-type: none;
+    padding: 0;
+    text-align: center;
+    margin-bottom: 40px;
+}
+nav#sections ul li {
+    display: inline;
+    margin: 0 15px;
+}
+nav#sections ul li a {
+    text-decoration: none;
+    color: rgb(8, 8, 104);
+    font-weight: normal;
+}
+
+nav#sections ul li a:hover {
+    background-color: lightgray;
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+a#datasource {
+    text-decoration: underline;
+    color: black;
+    font-weight: bold;
+}
