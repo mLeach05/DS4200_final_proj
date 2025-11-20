@@ -7,7 +7,7 @@ Last Updated: 11/15/2025
 body {
     font-family: 'Times New Roman', Times, serif;
     margin: 20px;
-    background-color: white;
+    background-color: linen;
     color: black;
 }
 
@@ -41,7 +41,7 @@ nav#sections ul li a {
 }
 
 nav#sections ul li a:hover {
-    background-color: lightgray;
+    background-color: rgb(196, 185, 177);
     text-decoration: underline;
     font-weight: bold;
 }
