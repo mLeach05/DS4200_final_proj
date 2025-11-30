@@ -51,3 +51,7 @@ a#datasource {
     color: black;
     font-weight: bold;
 }
+
+iframe {
+    border: none;
+}
