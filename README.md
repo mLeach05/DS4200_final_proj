@@ -1,5 +1,4 @@
 # DS4200_final_proj
-Final project for DS4200
 # Exploring the Geography of Crime in Los Angeles
 
 **Team:** Harshini Dinesh, Milo Leach, Samuel Castelein  
