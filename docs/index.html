@@ -53,33 +53,25 @@
     <div id="viz1">
         <p><b>Visualization 1</b> - Bar Graphs Showing Most Common Crimes Per Year (2020-2024)</p>
         <img src="visualizations/common_crime_distribution.png", height="500", width="1000"></img>
-        <p><b>Takeaway:</b>This visualization provides a broad foundation by showing which crimes occur most frequently each year. It highlights persistent, high-volume offenses such as theft and burglary, showing how certain crime types consistently dominate the landscape. This overall trend helps frame the more detailed demographic, geographic, and behavioral analyses that follow.
-        </p>
-        <p><b>Static Data Visualization:</b>This visualization uses a consistent color legend that allows viewers to quickly track individual crime types across all four years. The uniform scaling and clear labeling make it easy to compare proportions visually without needing additional interaction.
+        <p><b>Takeaway:</b>This visualization provides a broad look at the crime in LA, showing which crimes have occurred the most frequently over recent years. Looking at this chart, we can see that theft (specifically vehicle theft) and assault have been the most common crimes, with burglary from a vehicle consistently appearing in the top five as well. The most common crime typically accounts for around 10% of all crimes for that year, with a spike in 2024 where stolen vehicles made up 17%. These overall trends help frame the more specific demographic and geographical analysis later in our project. 
         </p>
     </div>
     <div id="viz2">
         <p><b>Visualization 2</b> - Bar Graphs Showing Proportion of Crimes Against Victim Demographics by Race (2020–2024)</p>
         <img src="visualizations/crime_by_race.png", width="1000", height="500"></img>
-        <p><b>Takeaway:</b>Building on the crime totals from Visualization 1, this figure examines which racial groups are most affected by these common crimes. It reveals clear disparities in victimization, suggesting that certain demographic groups face disproportionately higher rates of specific crimes. This shifts the analysis from “what types of crime occur?” to “who is most impacted by them?”
-        </p>
-        <p><b>Static Data Visualization:</b>This chart relies on visual comparison across the grid layout. The consistent color coding for each demographic group serves as a visual guide that helps users track changes in victimization patterns across the four-year period.
+        <p><b>Takeaway:</b>This visualization examines which racial groups are most affected by the previously identified most common crimes using victim descent in relation to proportion of total crimes. The scale is normalized across all years to provide a reliable comparison, and it shows how people of Hispanic/Latin/Mexican descent tend to be targeted the most each year (staying around 0.31 to 0.38 from 2020 to 2024). In terms of our design choices, this static data visualization was designed to have consistent color coding for each demographic group to serve as a visual guide that helps users track changes in victimization patterns across the four-year period.
         </p>
     </div>
     <div id="viz3">
         <p><b>Visualization 3</b> - Interactive Altair Histogram Showing Distribution of Victim Age by Crime Type</p>
         <iframe src="visualizations/victim_age_group_histogram.html", width="930", height="550"></iframe>
-        <p><b>Takeaway:</b>After examining racial demographics, this interactive histogram focuses on age-related vulnerability. It shows which crime types disproportionately affect children, teens, working-age adults, or older individuals. This adds another layer of insight by connecting crime trends to the life stages of victims, revealing that some crimes cluster around younger populations while others disproportionately impact older adults.
-        </p>
-        <p><b>Interactive Data Visualization:</b>Users can select specific crime types from a dropdown menu to filter the histogram, allowing focused exploration of how individual crimes affect different age groups. The "All" option shows the complete distribution. Additionally, Altair's built-in zoom and pan features let users examine specific age ranges in detail. Hovering over bars reveals tooltips with exact crime counts and age group information.
+        <p><b>Takeaway:</b>This visualization is an interactive histogram which lets users select crime types to understand how different crime types disproportionately affect children, teens, working-age adults, or older individuals. This is valuable because the user can identify which crimes disproportionately impact younger populations versus older adults, depending on the stage of life they are in. For example, children are not likely to own vehicles so people in their twenties and thirties are most affected by burglary from vehicles, and teens are not likely to own homes, so people in their twenties to seventies are victims of trespassing. To address their tasks, users can select specific crime types from a dropdown menu to filter the histogram and use Altair's built-in zoom and pan features to examine specific age ranges in detail. Also, hovering over bars reveals tooltips with exact crime counts and age group information, allowing focused exploration of how individual crimes affect different age groups.
         </p>
     </div>
     <div id="viz4">
         <p><b>Visualization 4</b> - Interactive Altair Map of Crime Type Across Los Angeles (2020-2023)</p>
         <iframe src="visualizations/crime_map.html", width="650", height="600"></iframe>
-        <p><b>Takeaway:</b>With demographic patterns established, this map visualizes how crimes are distributed geographically across the city. It shows that crimes are not evenly spread; instead, certain neighborhoods experience higher concentrations of specific offenses. This spatial perspective connects earlier demographic findings with place-based realities, suggesting that risk levels are shaped not only by who victims are but also by where they live.
-        </p>
-        <p><b>Interactive Data Visualization:</b>A radio button selector allows users to switch between individual years (2020-2023) or view aggregate data across all years. This temporal filtering reveals whether crime hotspots remain consistent or shift over time. Hovering over any district displays a tooltip showing the district name and exact crime count, providing precise information without cluttering the map.
+        <p><b>Takeaway:</b>This visualization provides a useful way to view geographic crime trends in LA. We can see that crime is not evenly spread, and is more concentrated in denser urban areas, with a few consistent hotspots. These hotspots remain consistent over the years, with three major hotspots being LAX, Downtown LA, and Hollywood. This knowledge of crime hotspots could be used to inform plans to reduce and monitor crime, as well as warn citizens about higher risk areas. 
         </p>
     </div>
     <div id="viz5">
@@ -89,22 +81,14 @@
             width="900"
             height="750">
         </iframe>
-        <p><b>Takeaway:</b>The final visualization pairs victim age with time-of-day patterns to show when people of different age groups face the highest risk. It reveals behavioral and situational trends—for example, younger victims appearing in later-night incidents or older victims being more vulnerable during daytime hours. This completes the analysis by linking demographics and geography to temporal patterns of crime.
+        <p><b>Takeaway:</b> This visualization is an interactive scatter plot that explores how crime varies by victim age and time of day. Each point represents an individual crime report, with the victim's age shown along the x-axis and the hour in which the crime was committed on the y-axis. Due to the fact that crime patterns often change depending on the time of day, this visualization allows users to examine which age groups are most affected during different hours, such as late at night or early in the morning. The interactive features make it possible to uncover relationships that would be difficult to see in a static plot. For example, users might observe that certain crimes peak during nighttime hours and tend to affect young adults, while others are more evenly distributed across times and age groups. In the end, this visualization supports a deeper exploration of how temporal patterns and age demographics intersect within crime data.
         </p>
-        <p><b>Interactive Data Visualization:</b>Users can filter the scatter plot by crime type to isolate specific patterns and identify when particular offenses cluster by time and victim age. D3's zoom and pan functionality allows detailed exploration of specific age ranges or time windows. Interactive tooltips appear on hover, displaying exact victim age, time of incident, and crime type, enabling users to examine individual data points while maintaining the overall pattern view.
-        </p>
-        <p>This interactive scatter plot shows the relationship between victim age and the time of day 
-            at which crimes occurred in Los Angeles from 2020 to 2025. Users can filter the visualization 
-            by crime type using the dropdown menu and adjust the displayed time window with the range 
-            sliders. These controls make it easier to explore when different crimes occur and how 
-            victimization varies across age groups. Hovering over any point reveals additional details 
-            about the incident, including date and weapon information when available.</p>
 </div>
     </section>
 
     <div id="conclusion">
         <h2>Conclusion</h2>
-        <p> what you have learned from the data visualization and what can be done in the future.
+        <p> Through our comprehensive analysis, we uncovered several important patterns about crime in Los Angeles: Vehicle burglary and identity theft rank among the top crimes across all years, so theft remains a deeply rooted problem that needs continued intervention. Hispanic and Latino residents consistently appear among the most affected groups, so these communities need to be more focused on. Working-age adults in their twenties and thirties face the highest overall crime rates, particularly for property crimes, while identity theft disproportionately affects middle-aged and older adults, so these individuals require more protection and education on home security technology and identity theft risks. In terms of geographic patterns, there are clear crime hotspots in certain Los Angeles districts, which may be due to poor economic conditions and lack of community resources. In terms of crime patterns across time, late-night hours show crime concentrated against younger victims and day-time hours against older adults, so these individuals need more protection and supervision during these hours. In terms of future work, we can collect more holistic data and analyze how socioeconomic factors cause geographic crime hotspots, examine seasonal crime patterns, and conduct studies to track how crime evolves in response to targeted interventions by communities. 
         </p>
     </div>
 </body>
