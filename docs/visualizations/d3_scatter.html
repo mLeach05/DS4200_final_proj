@@ -87,7 +87,7 @@
       .attr("transform", `translate(${margin.left}, 0)`);
 
   // Load data
-  d3.csv("../data/Crime_Data_from_2020_to_Present.csv").then(raw => {
+  d3.csv("../../data/Crime_Data_from_2020_to_Present.csv").then(raw => {
 
       // Prepare & clean data
       let data = raw.map(d => ({
