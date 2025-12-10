@@ -55,27 +55,28 @@
     <section id="visualizations">
     <h1>Visualizations</h1>
     <div id="viz1">
-        <p><b>Visualization 1</b> - Bar Graphs Showing Most Common Crimes Per Year (2020-2024)</p>
-        <img src="visualizations/common_crime_distribution.png", height="500", width="1000"></img>
-        <p><b>Takeaway:</b>This visualization provides a broad look at the crime in LA, showing which crimes have occurred the most frequently over recent years. Looking at this chart, we can see that theft (specifically vehicle theft) and assault have been the most common crimes, with burglary from a vehicle consistently appearing in the top five as well. The most common crime typically accounts for around 10% of all crimes for that year, with a spike in 2024 where stolen vehicles made up 17%. These overall trends help frame the more specific demographic and geographical analysis later in our project. 
+        <p><b>Visualization 1</b> - Interactive Altair Map of Crime Type Across Los Angeles (2020-2023)</p>
+        <iframe src="visualizations/crime_map.html", width="650", height="600"></iframe>
+        <p><b>Takeaway:</b>This visualization provides a useful way to view geographic crime trends in LA. We can see that crime is not evenly spread, and is more concentrated in denser urban areas, with a few consistent hotspots. These hotspots remain consistent over the years, with three major hotspots being LAX, Downtown LA, and Hollywood. This knowledge of crime hotspots could be used to inform plans to reduce and monitor crime, as well as warn citizens about higher risk areas. 
         </p>
     </div>
     <div id="viz2">
-        <p><b>Visualization 2</b> - Bar Graphs Showing Proportion of Crimes Against Victim Demographics by Race (2020–2024)</p>
-        <img src="visualizations/crime_by_race.png", width="1000", height="500"></img>
-        <p><b>Takeaway:</b>This visualization examines which racial groups are most affected by the previously identified most common crimes using victim descent in relation to proportion of total crimes. The scale is normalized across all years to provide a reliable comparison, and it shows how people of Hispanic/Latin/Mexican descent tend to be targeted the most each year (staying around 0.31 to 0.38 from 2020 to 2024). In terms of our design choices, this static data visualization was designed to have consistent color coding for each demographic group to serve as a visual guide that helps users track changes in victimization patterns across the four-year period.
+        <p><b>Visualization 2</b> - Bar Graphs Showing Most Common Crimes Per Year (2020-2024)</p>
+        <img src="visualizations/common_crime_distribution.png", height="500", width="1000"></img>
+        <p><b>Takeaway:</b>This visualization provides a broad look at the crime in LA, showing which crimes have occurred the most frequently over recent years. Looking at this chart, we can see that theft (specifically vehicle theft) and assault have been the most common crimes, with burglary from a vehicle consistently appearing in the top five as well. The most common crime typically accounts for around 10% of all crimes for that year, with a spike in 2024 where stolen vehicles made up 17%. These overall trends help frame the more specific demographic and geographical analysis later in our project. 
         </p>
+        
     </div>
     <div id="viz3">
-        <p><b>Visualization 3</b> - Interactive Altair Histogram Showing Distribution of Victim Age by Crime Type</p>
-        <iframe src="visualizations/victim_age_group_histogram.html", width="930", height="550"></iframe>
-        <p><b>Takeaway:</b>This visualization is an interactive histogram which lets users select crime types to understand how different crime types disproportionately affect children, teens, working-age adults, or older individuals. This is valuable because the user can identify which crimes disproportionately impact younger populations versus older adults, depending on the stage of life they are in. For example, children are not likely to own vehicles so people in their twenties and thirties are most affected by burglary from vehicles, and teens are not likely to own homes, so people in their twenties to seventies are victims of trespassing. To address their tasks, users can select specific crime types from a dropdown menu to filter the histogram and use Altair's built-in zoom and pan features to examine specific age ranges in detail. Also, hovering over bars reveals tooltips with exact crime counts and age group information, allowing focused exploration of how individual crimes affect different age groups.
+        <p><b>Visualization 3</b> - Bar Graphs Showing Proportion of Crimes Against Victim Demographics by Race (2020–2024)</p>
+        <img src="visualizations/crime_by_race.png", width="1000", height="500"></img>
+        <p><b>Takeaway:</b>This visualization examines which racial groups are most affected by the previously identified most common crimes using victim descent in relation to proportion of total crimes. The scale is normalized across all years to provide a reliable comparison, and it shows how people of Hispanic/Latin/Mexican descent tend to be targeted the most each year (staying around 0.31 to 0.38 from 2020 to 2024). In terms of our design choices, this static data visualization was designed to have consistent race labeling for each demographic group to serve as a visual guide that helps users track changes in victimization patterns across the four-year period.
         </p>
     </div>
     <div id="viz4">
-        <p><b>Visualization 4</b> - Interactive Altair Map of Crime Type Across Los Angeles (2020-2023)</p>
-        <iframe src="visualizations/crime_map.html", width="650", height="600"></iframe>
-        <p><b>Takeaway:</b>This visualization provides a useful way to view geographic crime trends in LA. We can see that crime is not evenly spread, and is more concentrated in denser urban areas, with a few consistent hotspots. These hotspots remain consistent over the years, with three major hotspots being LAX, Downtown LA, and Hollywood. This knowledge of crime hotspots could be used to inform plans to reduce and monitor crime, as well as warn citizens about higher risk areas. 
+        <p><b>Visualization 4</b> - Interactive Altair Brush and Link Bar Charts Showing Distribution of Victim Age by Crime Type</p>
+        <iframe src="visualizations/age_crime_brush_link.html", width="930", height="550"></iframe>
+        <p><b>Takeaway:</b>This visualization consists of interactive bar charts that let users understand how different crime types disproportionately affect children, teens, working-age adults, or older individuals. This is valuable because the user can identify which crimes disproportionately impact younger populations versus older adults, depending on the stage of life they are in. For example, children are not likely to own vehicles, so people in their twenties and thirties are most affected by burglary from vehicles, and teens are not likely to own homes, so people in their twenties to seventies are victims of trespassing. Hovering over bars reveals tooltips with exact crime counts and age group information, allowing focused exploration of how individual crimes affect different age groups.
         </p>
     </div>
     <div id="viz5">
