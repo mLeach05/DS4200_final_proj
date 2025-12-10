@@ -91,12 +91,12 @@
 
       // Prepare & clean data
       let data = raw.map(d => ({
-        age: +d["Vict Age"],
-        time: convertToHour(d["TIME OCC"]),
-        crimeDesc: d["Crm Cd Desc"],
-        date: d["DATE OCC"],
-        weapon: d["Weapon Desc"]
-      })).filter(d => d.age > 0);
+      age: +d["Vict Age"],
+      time: convertToHour(d["TIME OCC"]),
+      crimeDesc: d["Crm Cd Desc"],
+      date: d["DATE OCC"],
+      weapon: d["Weapon Desc"]
+    })).filter(d => d.age >= 10 && d.age <= 80);
 
       // Dropdown
       const crimeTypes = Array.from(new Set(data.map(d => d.crimeDesc))).sort();
@@ -135,7 +135,10 @@
         .attr("text-anchor", "middle")
         .text("Time of Day (24-hour)");
 
-      const color = d3.scaleOrdinal(d3.schemeTableau10);
+        const color = d3.scaleOrdinal([
+        "#1976d2", "#388e3c", "#1e88e5", "#43a047", "#2196f3", "#4caf50",
+        "#42a5f5", "#66bb6a", "#64b5f6", "#81c784", "#90caf9", "#a5d6a7"
+      ]);
 
       // Main update function
       function updateScatter() {
@@ -169,6 +172,38 @@
               .tickFormat(d => d + ":00")
           );
 
+
+          svg.selectAll(".density-line").remove();
+
+          // Create density bins for time
+          const timeExtent = d3.extent(filtered, d => d.time);
+          const timeBins = d3.bin()
+            .domain(timeExtent)
+            .thresholds(24)
+            .value(d => d.time)(filtered);
+
+          const maxBinSize = d3.max(timeBins, d => d.length);
+
+          // Draw density indicator on the right side
+          svg.selectAll(".density-bar")
+          .data(timeBins)
+          .enter()
+          .append("rect")
+          .attr("class", "density-line")
+          .attr("x", width - margin.right + 15)
+          .attr("y", d => y(d.x1))
+          .attr("width", d => (d.length / maxBinSize) * 30)
+          .attr("height", d => Math.abs(y(d.x0) - y(d.x1)))
+          .attr("fill", d => {
+            const intensity = d.length / maxBinSize;
+            return intensity > 0.7 ? "#1976d2" : 
+                  intensity > 0.4 ? "#42a5f5" : "#90caf9";
+          })
+          .attr("opacity", 0.7)
+          .attr("stroke", "#1565c0")
+          .attr("stroke-width", 1.5);
+
+
           // Bind data to circles
           const circles = svg.selectAll("circle")
               .data(filtered, d => `${d.age}-${d.time}-${d.crimeDesc}`);
@@ -179,7 +214,10 @@
               .attr("cx", d => x(d.age))
               .attr("cy", d => y(d.time))
               .attr("r", 3)
-              .attr("fill", d => color(d.crimeDesc))
+              .attr("fill", d => {
+                const crimeFilter = select.node().value;
+                return crimeFilter === "All Crimes" ? color(d.crimeDesc) : "#3196f3";
+              })
               .attr("opacity", 0.7)
               .on("mouseover", (event, d) => {
                 tooltip.style("visibility", "visible")
@@ -200,7 +238,11 @@
           // UPDATE
           circles
             .attr("cx", d => x(d.age))
-            .attr("cy", d => y(d.time));
+            .attr("cy", d => y(d.time))
+            .attr("fill", d => {
+              const crimeFilter = select.node().value;
+              return crimeFilter === "All Crimes" ? color(d.crimeDesc) : "#2196f3";
+            });
 
           // EXIT
           circles.exit().remove();
