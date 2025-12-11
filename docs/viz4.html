@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>viz4</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav id = "sections">
+        <ul>
+            <li><a href = "index.html">Introduction
+            </a></li>
+            <li><a href = "viz1.html">Map of Crime in LA
+            </a></li>
+            <li><a href = "viz2.html">Crime Distribution by Year</a></li>
+            <li><a href = "viz3.html">Crime by Victim Demographics</a></li>
+            <li><a href = "viz4.html">Distribution of Victim Age</a></li>
+            <li><a href = "viz5.html">Crime by Victim Age vs Time of Day</a></li>
+            <li><a href = "conclusion.html">Conclusion
+            </a></li>
+        </ul>
+    </nav>
+    <h2 id="title">Distribution of Victim Age</h2>
+    <h3>Interactive Altair Brush and Link Bar Charts Showing Distribution of Victim Age by Crime Type</h3>
+    <div class = "viz" id="viz4">
+        <iframe src="visualizations/age_crime_brush_link.html" width="1220" height="490"></iframe>
+        <p><b>Takeaway:</b>This visualization consists of interactive bar charts that let users understand how different crime types disproportionately affect children, teens, working-age adults, or older individuals. This is valuable because the user can identify which crimes disproportionately impact younger populations versus older adults, depending on the stage of life they are in. For example, children are not likely to own vehicles, so people in their twenties and thirties are most affected by burglary from vehicles, and teens are not likely to own homes, so people in their twenties to seventies are victims of trespassing. Hovering over bars reveals tooltips with exact crime counts and age group information, allowing focused exploration of how individual crimes affect different age groups.
+        </p>
+    </div>
+    <div id="pagenav">
+        <a href="viz5.html" class="next">Next</a>
+        <a href="viz3.html" class="back">Back</a>
+    </div>
+</body>
+</html>

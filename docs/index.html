@@ -7,19 +7,22 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1 id="title">Exploring the Geography of Crime: A Data-Driven Study of Los Angeles</h1>
-    <h2 id="authors">Harshini Dinesh, Milo Leach, Samuel Castelein</h2>
     <nav id = "sections">
         <ul>
             <li><a href = "#introduction">Introduction
             </a></li>
-            <li><a href = "#visualizations">Visualizations
+            <li><a href = "viz1.html">Map of Crime in LA
             </a></li>
-            <li><a href = "#conclusion">Conclusion
+            <li><a href = "viz2.html">Crime Distribution by Year</a></li>
+            <li><a href = "viz3.html"> Crime by Victim Demographics</a></li>
+            <li><a href = "viz4.html">Distribution of Victim Age</a></li>
+            <li><a href = "viz5.html">Crime by Victim Age vs Time of Day</a></li>
+            <li><a href = "conclusion.html">Conclusion
             </a></li>
         </ul>
     </nav>
-
+    <h1 id="title">Exploring the Geography of Crime:<br>A Data-Driven Study of Los Angeles</h1>
+    <h2 id="authors">Harshini Dinesh, Milo Leach, Samuel Castelein</h2>
     <section id="introduction">
         <h2>Introduction</h2>
         <p>
@@ -30,71 +33,30 @@
             We started our project by pre-processing the data: filtering out missing values and values that do not make sense  (i.e  the date of crime occurrence being after the date reported), converting date/time columns to a compatible format, removing redundant columns, and selecting the amount of data we want to work with. After pre-processing the data, we went onto our tasks of exploring the distribution of crime data, checking how different demographics, age groups, and geographic locations were impacted using Altair and Pandas. We finished off by analyzing how crime varies by victim age and time of day using D3.
         </p>        
         <h2>Data Source and References</h2>
-        <p>
-            <a id="datasource" href = "https://catalog.data.gov/dataset/crime-data-from-2020-to-present">Crime Data from 2020 to Present (data.gov)</a>
-        </p>
-        <p>
-            <a id="datasource" href = "https://data.lacity.org/Public-Safety/Crime-Data-from-2020-to-Present/2nrs-mtv8/data_preview">Alternate Dataset Export Link</a>
-        </p>
-                <p>
-            <a id="datasource" href = "https://data.lacity.org/Public-Safety/Crime-Data-from-2020-to-Present/2nrs-mtv8/about_data">Detailed Column and Data Info</a>
-        </p>
-        <p>The dataset we are analyzing covers crime data from 2020 to present day in the city of Los Angeles and was taken from data.gov, The Home of the U.S. Government's Open Data. The dataset contains 1,004,992 rows and 28 columns, including the following features: division of records file number, date reported, date occurred, time occurred, area, area name, four digit area code, type of crime committed, crime code, MO codes, victim age, victim sex, victim race, and crime premises.
+        <ul id="data_sources">
+            <li><a id="datasource" href = "https://catalog.data.gov/dataset/crime-data-from-2020-to-present">Crime Data from 2020 to Present (data.gov)</a></li>
+            <li><a id="datasource" href = "https://data.lacity.org/Public-Safety/Crime-Data-from-2020-to-Present/2nrs-mtv8/data_preview">Alternate Dataset Export Link</a></li>
+            <li><a id="datasource" href = "https://data.lacity.org/Public-Safety/Crime-Data-from-2020-to-Present/2nrs-mtv8/about_data">Detailed Column and Data Info</a></li>
+            <li><a id='datasource' href = "https://geohub.lacity.org/datasets/924f1b2e8df642f38a6dcbcf3c7b1709_0/explore?location=34.042241%2C-118.445478%2C9.99">LA Reporting Districts Geodata (la geohub)</a></li>
+        </ul>
+        
+        <p>The dataset we are analyzing covers crime data from 2020 to present day in the city of Los Angeles and was taken from data.gov, The Home of the U.S. Government's Open Data. 
+            The dataset contains 1,004,992 rows and 28 columns, including the following features: division of records file number, date reported, date occurred, time occurred, area, area name, four digit area code, type of crime committed, crime code, MO codes, victim age, victim sex, victim race, and crime premises.
+            For geographic data, we used LA's Reporting Districts geodata from LA geohub. The reporting district numbers in our crime dataset did not match up with the 
+            district numebrs from the geodata, so we had to manually map each crime to its corresponding district using geopandas. 
         </p>
         <h2>Papers Related to Our Topic</h3>
-        <ul>
+        <ul id = "related_papers">
             <li>
                 <a href = "https://pmc.ncbi.nlm.nih.gov/articles/PMC7571535/">Effects of COVID-19 Containment Policies on Crime in Los Angeles </a>
             </li>
-
             <li>
                 <a href = "https://www.sciencedirect.com/science/article/pii/S0047235220301860">Impact of Social Distancing During COVID-19 on Crime in Los Angeles and Indianapolis</a>
             </li>
         </ul>
     </section>
-    <section id="visualizations">
-    <h1>Visualizations</h1>
-    <div id="viz1">
-        <p><b>Visualization 1</b> - Interactive Altair Map of Crime Type Across Los Angeles (2020-2023)</p>
-        <iframe src="visualizations/crime_map.html", width="650", height="600"></iframe>
-        <p><b>Takeaway:</b>This visualization provides a useful way to view geographic crime trends in LA. We can see that crime is not evenly spread, and is more concentrated in denser urban areas, with a few consistent hotspots. These hotspots remain consistent over the years, with three major hotspots being LAX, Downtown LA, and Hollywood. This knowledge of crime hotspots could be used to inform plans to reduce and monitor crime, as well as warn citizens about higher risk areas. 
-        </p>
-    </div>
-    <div id="viz2">
-        <p><b>Visualization 2</b> - Bar Graphs Showing Most Common Crimes Per Year (2020-2024)</p>
-        <img src="visualizations/common_crime_distribution.png", height="500", width="1000"></img>
-        <p><b>Takeaway:</b>This visualization provides a broad look at the crime in LA, showing which crimes have occurred the most frequently over recent years. Looking at this chart, we can see that theft (specifically vehicle theft) and assault have been the most common crimes, with burglary from a vehicle consistently appearing in the top five as well. The most common crime typically accounts for around 10% of all crimes for that year, with a spike in 2024 where stolen vehicles made up 17%. These overall trends help frame the more specific demographic and geographical analysis later in our project. 
-        </p>
-        
-    </div>
-    <div id="viz3">
-        <p><b>Visualization 3</b> - Bar Graphs Showing Proportion of Crimes Against Victim Demographics by Race (2020–2024)</p>
-        <img src="visualizations/crime_by_race.png", width="1000", height="500"></img>
-        <p><b>Takeaway:</b>This visualization examines which racial groups are most affected by the previously identified most common crimes using victim descent in relation to proportion of total crimes. The scale is normalized across all years to provide a reliable comparison, and it shows how people of Hispanic/Latin/Mexican descent tend to be targeted the most each year (staying around 0.31 to 0.38 from 2020 to 2024). In terms of our design choices, this static data visualization was designed to have consistent race labeling for each demographic group to serve as a visual guide that helps users track changes in victimization patterns across the four-year period.
-        </p>
-    </div>
-    <div id="viz4">
-        <p><b>Visualization 4</b> - Interactive Altair Brush and Link Bar Charts Showing Distribution of Victim Age by Crime Type</p>
-        <iframe src="visualizations/age_crime_brush_link.html", width="930", height="550"></iframe>
-        <p><b>Takeaway:</b>This visualization consists of interactive bar charts that let users understand how different crime types disproportionately affect children, teens, working-age adults, or older individuals. This is valuable because the user can identify which crimes disproportionately impact younger populations versus older adults, depending on the stage of life they are in. For example, children are not likely to own vehicles, so people in their twenties and thirties are most affected by burglary from vehicles, and teens are not likely to own homes, so people in their twenties to seventies are victims of trespassing. Hovering over bars reveals tooltips with exact crime counts and age group information, allowing focused exploration of how individual crimes affect different age groups.
-        </p>
-    </div>
-    <div id="viz5">
-        <p><b>Visualization 5</b> - D3 Scatter Plot Showing Crime Type in Relation to Victim Age vs Time of Day</p>
-        <iframe 
-            src="visualizations/d3_scatter.html"
-            width="900"
-            height="750">
-        </iframe>
-        <p><b>Takeaway:</b> This scatter plot reveals temporal and demographic crime patterns by plotting victim age against time of day, allowing investigators to identify peak activity periods, vulnerable populations, and age-specific trends. For example, "FAILURE TO YIELD" incidents concentrate among 20-30 year olds during morning (7:00-9:00) and evening (15:00-18:00) rush hours, indicating traffic violations primarily affect commuting adults and suggesting targeted enforcement during these windows. In contrast, bike thefts show broader age distribution (15-50 years) with daytime concentration (10:00-20:00) when bikes are left unattended, particularly spiking at 17:00-19:00 during end-of-workday periods. Battery-simple assault displays consistent occurrence across all age groups throughout the day with notable increases during late evening hours (20:00-23:00), suggesting different intervention strategies are needed for crimes with varying temporal-demographic patterns. The density visualization on the right clearly shows when crime clusters occur, enabling law enforcement to deploy resources strategically and design prevention programs targeting specific age groups during high-risk time periods.
-        </p>
-</div>
-    </section>
-
-    <div id="conclusion">
-        <h2>Conclusion</h2>
-        <p> Through our comprehensive analysis, we uncovered several important patterns about crime in Los Angeles: Vehicle burglary and identity theft rank among the top crimes across all years, so theft remains a deeply rooted problem that needs continued intervention. Hispanic and Latino residents consistently appear among the most affected groups, so these communities need to be more focused on. Working-age adults in their twenties and thirties face the highest overall crime rates, particularly for property crimes, while identity theft disproportionately affects middle-aged and older adults, so these individuals require more protection and education on home security technology and identity theft risks. In terms of geographic patterns, there are clear crime hotspots in certain Los Angeles districts, which may be due to poor economic conditions and lack of community resources. In terms of crime patterns across time, late-night hours show crime concentrated against younger victims and day-time hours against older adults, so these individuals need more protection and supervision during these hours. In terms of future work, we can collect more holistic data and analyze how socioeconomic factors cause geographic crime hotspots, examine seasonal crime patterns, and conduct studies to track how crime evolves in response to targeted interventions by communities. 
-        </p>
+    <div id="pagenav">
+        <a href="viz1.html" class="next">Next</a>
     </div>
 </body>
 </html>

@@ -7,20 +7,14 @@ Last Updated: 11/15/2025
 body {
     font-family: 'Times New Roman', Times, serif;
     margin: 20px;
-    background-color: rgb(227, 244, 252);
+    background-color: rgb(255, 255, 255);
     color: black;
-}
-
-#title {
-    text-align: center;
-    font-size: 36px;
-    margin-bottom: 10px;
-    font-weight: bold;
+    font-size: 40px;
 }
 
 #authors {
     text-align: center;
-    font-size: 24px;
+    font-size: 30px;
     margin-bottom: 10px;
     font-style: italic;
 }
@@ -33,15 +27,18 @@ nav#sections ul {
 nav#sections ul li {
     display: inline;
     margin: 0 15px;
+    text-size-adjust: 40px;
+
 }
 nav#sections ul li a {
     text-decoration: none;
     color: rgb(11, 11, 149);
-    font-weight: normal;
+    font-weight: bold;
+    text-size-adjust: 40px;
 }
 
 nav#sections ul li a:hover {
-    background-color: rgb(254, 213, 222);
+    background-color: rgb(180, 180, 180);
     text-decoration: underline;
     font-weight: bold;
 }
@@ -54,4 +51,116 @@ a#datasource {
 
 iframe {
     border: none;
+}
+
+.center {
+position: absolute;
+top: 90%;
+left: 50%;
+transform: translate(-50%, -50%);
+padding: 10px;
+}
+
+p {
+    font-size: 34px;
+    font-family: 'Times New Roman', Times, serif;
+    padding: 15px;
+    border-radius: 10px;
+    border: 2px solid black;
+    text-align: center;
+    margin-left: 80px;
+    margin-right: 80px;
+}
+.viz {
+    width: 100%;
+    text-align: center;
+}
+
+h3 {
+    font-size: 32px;
+    font-family: 'Times New Roman', Times, serif;
+    margin-bottom: 10px;
+    font-weight: bold;
+    text-align: center;
+}
+
+h2 {
+    font-size: 50px;
+    font-family: 'Times New Roman', Times, serif;
+    margin-bottom: 10px;
+    font-weight: bold;
+    text-align: center;
+}
+
+#title {
+    font-size: 70px;
+    font-family: 'Times New Roman', Times, serif;
+    margin-bottom: 10px;
+    font-weight: bold;
+    text-align: center;
+}
+
+#related_papers {
+    font-size: 28px;
+    font-family: 'Times New Roman', Times, serif;
+    margin-left: 200px;
+    margin-right: 200px;
+    text-align: center;
+    list-style-type: none;
+    color: black;
+}
+
+#data_sources {
+    font-size: 28px;
+    font-family: 'Times New Roman', Times, serif;
+    margin-left: 200px;
+    margin-right: 200px;
+    text-align: center;
+    list-style-type: none;
+}
+
+#data_sources li a {
+    text-decoration: underline;
+    color: black;
+    font-weight: bold;
+    text-align: center;
+}
+
+#related_papers li a {
+    text-decoration: underline;
+    color: black;
+    font-weight: bold;
+    text-align: center;
+    line-height: 1.25;
+}
+#pagenav {
+    width: 100%;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    margin-left: 80px;
+    margin-right: 80px;
+    overflow: auto;
+}
+#pagenav a.next {
+    float: right;
+    text-decoration: none;
+    color: rgb(11, 11, 149);
+    font-weight: bold;
+    font-size: 40px;
+    border: 2px solid black;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: rgba(3, 3, 247, 0.366);
+    margin-right: 160px;
+}
+#pagenav a.back {
+    float: left;
+    text-decoration: none;
+    color: rgb(11, 11, 149);
+    font-weight: bold;
+    font-size: 40px;
+    border: 2px solid black;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: rgba(3, 3, 247, 0.366);
 }

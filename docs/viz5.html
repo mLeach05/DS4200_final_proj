@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>viz5</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav id = "sections">
+        <ul>
+            <li><a href = "index.html">Introduction
+            </a></li>
+            <li><a href = "viz1.html">Map of Crime in LA
+            </a></li>
+            <li><a href = "viz2.html">Crime Distribution by Year</a></li>
+            <li><a href = "viz3.html"> Crime by Victim Demographics</a></li>
+            <li><a href = "viz4.html">Distribution of Victim Age</a></li>
+            <li><a href = "viz5.html">Crime by Victim Age vs Time of Day</a></li>
+            <li><a href = "conclusion.html">Conclusion
+            </a></li>
+        </ul>
+    </nav>
+    <h2 id="title">Crime by Victim Age vs Time of Day</h2>
+
+    <h3>D3 Scatter Plot Showing Crime Type in Relation to Victim Age vs Time of Day</h3>
+    <div class = "viz" id="viz5">
+        <iframe src="visualizations/d3_scatter.html" width="1400" height="950"></iframe>
+        <p><b>Takeaway:</b> This scatter plot reveals temporal and demographic crime patterns by plotting victim age against time of day, allowing investigators to identify peak activity periods, vulnerable populations, and age-specific trends. For example, "FAILURE TO YIELD" incidents concentrate among 20-30 year olds during morning (7:00-9:00) and evening (15:00-18:00) rush hours, indicating traffic violations primarily affect commuting adults and suggesting targeted enforcement during these windows. In contrast, bike thefts show broader age distribution (15-50 years) with daytime concentration (10:00-20:00) when bikes are left unattended, particularly spiking at 17:00-19:00 during end-of-workday periods. Battery-simple assault displays consistent occurrence across all age groups throughout the day with notable increases during late evening hours (20:00-23:00), suggesting different intervention strategies are needed for crimes with varying temporal-demographic patterns. The density visualization on the right clearly shows when crime clusters occur, enabling law enforcement to deploy resources strategically and design prevention programs targeting specific age groups during high-risk time periods.
+        </p>
+    </div>
+    <div id="pagenav">
+        <a href="conclusion.html" class="next">Next</a>
+        <a href="viz4.html" class="back">Back</a>
+    </div>
+</body>
+</html>
