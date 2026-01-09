@@ -10,7 +10,7 @@
 
 We analyzed crime patterns in Los Angeles from 2020 to 2024 to understand who is affected by crime, where it happens, and when people are most vulnerable.
 
-**Live Website:** [[Insert link here](https://mleach05.github.io/DS4200_final_proj/)]
+**Live Website:** [[Link](https://mleach05.github.io/DS4200_final_proj/)]
 
 ---
 
